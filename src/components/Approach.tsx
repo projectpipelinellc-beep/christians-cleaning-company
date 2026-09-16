@@ -9,7 +9,7 @@ export function Approach() {
             What you can expect from CCC.
           </h2>
           <p className="mt-5 font-serif text-xl text-charcoal">
-            Tell us about your home and what you need help with.
+            Tell us about your home or business and what you need help with.
           </p>
           <a
             href="#quote"

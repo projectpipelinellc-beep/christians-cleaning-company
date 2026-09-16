@@ -10,7 +10,7 @@
 export const business = {
   name: "Christian's Cleaning Company",
   shortName: "CCC",
-  tagline: "Home Cleaning • Hudson Valley, NY",
+  tagline: "Home & Commercial Cleaning • Hudson Valley, NY",
   phone: "(845) 814-1020",
   phoneHref: "tel:+18458141020",
   email: "christianmadsenjr@gmail.com",

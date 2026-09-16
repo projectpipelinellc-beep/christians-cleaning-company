@@ -1,8 +1,8 @@
 # Christian's Cleaning Company — Website
 
 A Next.js 14 (App Router) + TypeScript + Tailwind CSS marketing site for
-Christian's Cleaning Company, a home cleaning business serving New York's
-Hudson Valley.
+Christian's Cleaning Company, a home and commercial cleaning business serving
+New York's Hudson Valley.
 
 ## Stack
 

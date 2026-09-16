@@ -19,9 +19,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: siteFlags.siteUrl ? new URL(siteFlags.siteUrl) : undefined,
-  title: "Christian's Cleaning Company | Home Cleaning in the Hudson Valley",
+  title: "Christian's Cleaning Company | Home & Commercial Cleaning in the Hudson Valley",
   description:
-    "Professional home cleaning serving Dutchess, Putnam, Westchester, Ulster, and Orange counties in New York's Hudson Valley. Request a free quote today.",
+    "Professional home and commercial cleaning serving Dutchess, Putnam, Westchester, Ulster, and Orange counties in New York's Hudson Valley. Request a free quote today.",
   robots: siteFlags.allowIndexing
     ? { index: true, follow: true }
     : { index: false, follow: false },

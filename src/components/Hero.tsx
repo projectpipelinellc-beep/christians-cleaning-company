@@ -8,7 +8,7 @@ export function Hero() {
       <div className="section-container grid items-center gap-14 py-16 sm:py-24 lg:grid-cols-[1.15fr,1fr] lg:gap-10 lg:py-32">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-coral sm:text-sm">
-            Home Cleaning &bull; Hudson Valley, NY
+            Home &amp; Commercial Cleaning &bull; Hudson Valley, NY
           </p>
           <h1 className="mt-5 font-serif text-5xl leading-[1.05] text-slate sm:text-6xl lg:text-7xl">
             A clean home.
@@ -17,8 +17,8 @@ export function Hero() {
           </h1>
           <p className="mt-7 max-w-lg text-base leading-relaxed text-charcoal-soft sm:text-lg">
             Leave the cleaning to Christian&rsquo;s Cleaning Company and make
-            room for what matters. Serving homes across Dutchess, Putnam,
-            Westchester, Ulster, and Orange counties.
+            room for what matters. Serving homes and businesses across
+            Dutchess, Putnam, Westchester, Ulster, and Orange counties.
           </p>
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
