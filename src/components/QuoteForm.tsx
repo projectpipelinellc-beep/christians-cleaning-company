@@ -158,8 +158,8 @@ export function QuoteForm() {
 
   if (status.kind === "success") {
     return (
-      <div className="rounded-lg border border-sage-dark/60 bg-ivory p-8 text-center sm:p-12">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-sage-light text-forest">
+      <div className="rounded-lg border border-haze-dark/60 bg-mist p-8 text-center sm:p-12">
+        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-haze-light text-coral">
           <CheckIcon className="h-6 w-6" />
         </div>
         <h3 className="mt-5 font-serif text-2xl text-charcoal">
@@ -175,15 +175,15 @@ export function QuoteForm() {
   }
 
   const fieldClass = (hasError: boolean) =>
-    `focus-ring w-full rounded border bg-ivory px-4 py-3 text-base text-charcoal placeholder:text-charcoal-soft/50 ${
-      hasError ? "border-red-700" : "border-sage-dark/70"
+    `focus-ring w-full rounded border bg-mist px-4 py-3 text-base text-charcoal placeholder:text-charcoal-soft/50 ${
+      hasError ? "border-red-700" : "border-haze-dark/70"
     }`;
 
   return (
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-lg border border-sage-dark/60 bg-ivory p-6 sm:p-10"
+      className="rounded-lg border border-haze-dark/60 bg-mist p-6 sm:p-10"
     >
       {status.kind === "error" && (
         <div
@@ -355,9 +355,9 @@ export function QuoteForm() {
                 value="email"
                 checked={form.contactMethod === "email"}
                 onChange={() => update("contactMethod", "email")}
-                className="focus-ring h-4 w-4 accent-forest"
+                className="focus-ring h-4 w-4 accent-coral"
               />
-              <MailIcon className="h-4 w-4 text-forest" />
+              <MailIcon className="h-4 w-4 text-slate" />
               Email
             </label>
             <label className="flex items-center gap-2 text-base text-charcoal">
@@ -367,9 +367,9 @@ export function QuoteForm() {
                 value="phone"
                 checked={form.contactMethod === "phone"}
                 onChange={() => update("contactMethod", "phone")}
-                className="focus-ring h-4 w-4 accent-forest"
+                className="focus-ring h-4 w-4 accent-coral"
               />
-              <PhoneIcon className="h-4 w-4 text-forest" />
+              <PhoneIcon className="h-4 w-4 text-slate" />
               Phone
             </label>
           </div>
@@ -379,7 +379,7 @@ export function QuoteForm() {
       <button
         type="submit"
         disabled={status.kind === "submitting"}
-        className="focus-ring mt-8 inline-flex w-full items-center justify-center rounded bg-forest px-7 py-3.5 text-base font-medium text-ivory transition-colors hover:bg-forest-light disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="focus-ring mt-8 inline-flex w-full items-center justify-center rounded bg-coral px-7 py-3.5 text-base font-medium text-mist transition-colors hover:bg-coral-dark disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {status.kind === "submitting" ? "Sending…" : "Request My Free Quote"}
       </button>

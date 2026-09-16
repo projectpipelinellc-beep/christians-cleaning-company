@@ -2,26 +2,24 @@ import { IntroIllustration } from "./illustrations";
 
 export function Intro() {
   return (
-    <section className="py-16 sm:py-24">
-      <div className="section-container grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        <div className="order-2 max-w-xl lg:order-1">
-          <h2 className="font-serif text-3xl leading-tight text-charcoal sm:text-4xl">
-            Your home deserves care.
-            <br />
-            Your time does, too.
+    <section className="bg-slate py-20 sm:py-28">
+      <div className="section-container grid gap-12 lg:grid-cols-[1fr,minmax(0,0.85fr)] lg:items-center lg:gap-16">
+        <div className="max-w-xl">
+          <h2 className="font-serif text-3xl leading-tight text-mist sm:text-4xl lg:text-5xl">
+            Your home deserves care. Your time does, too.
           </h2>
-          <p className="mt-6 text-base leading-relaxed text-charcoal-soft sm:text-lg">
+          <p className="mt-7 text-base leading-relaxed text-mist/75 sm:text-lg">
             There&rsquo;s a particular kind of relief that comes from walking
-            into a home that&rsquo;s truly clean &mdash; counters clear,
-            floors fresh, everything back in its place. It gives you back a
-            little bit of your day, and a little bit of your peace of mind.
+            into a home that&rsquo;s truly clean: counters clear, floors
+            fresh, everything back in its place. It gives you back a little
+            bit of your day, and a little bit of your peace of mind.
             That&rsquo;s what we&rsquo;re here for. Our mission is simple: to
             give every client the best experience possible, visit after
             visit.
           </p>
         </div>
-        <div className="order-1 mx-auto w-full max-w-md lg:order-2 lg:max-w-none">
-          <div className="aspect-[4/3] w-full overflow-hidden rounded-lg shadow-subtle">
+        <div className="mx-auto w-full max-w-xs lg:mx-0 lg:max-w-none">
+          <div className="aspect-[4/3] w-full overflow-hidden rounded-lg shadow-card">
             <IntroIllustration />
           </div>
         </div>

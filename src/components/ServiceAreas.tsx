@@ -3,10 +3,10 @@ import { PinIcon } from "./icons";
 
 export function ServiceAreas() {
   return (
-    <section id="areas" className="scroll-mt-24 bg-sage-light/60 py-16 sm:py-24">
-      <div className="section-container grid gap-10 lg:grid-cols-[1fr,1.1fr] lg:gap-16">
-        <div className="max-w-lg">
-          <h2 className="font-serif text-3xl leading-tight text-charcoal sm:text-4xl">
+    <section id="areas" className="scroll-mt-24 bg-mist-deep py-20 sm:py-28">
+      <div className="section-container">
+        <div className="max-w-xl">
+          <h2 className="font-serif text-3xl leading-tight text-slate sm:text-4xl">
             Serving homes across the Hudson Valley.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-charcoal-soft">
@@ -15,11 +15,13 @@ export function ServiceAreas() {
           </p>
         </div>
 
-        <ul className="grid grid-cols-1 gap-x-8 gap-y-5 border-t border-sage-dark/60 pt-8 sm:grid-cols-2">
+        <ul className="mt-10 flex flex-wrap gap-3">
           {serviceAreas.map((area) => (
-            <li key={area} className="flex items-center gap-3 text-lg text-charcoal">
-              <PinIcon className="h-5 w-5 shrink-0 text-forest" />
-              {area}
+            <li key={area}>
+              <span className="flex items-center gap-2 rounded-full border border-haze-dark bg-mist px-5 py-2.5 text-base text-slate">
+                <PinIcon className="h-4 w-4 shrink-0 text-coral" />
+                {area}
+              </span>
             </li>
           ))}
         </ul>

@@ -5,23 +5,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ivory: {
-          DEFAULT: "#FBF8F2",
-          deep: "#F3EEE3",
+        mist: {
+          DEFAULT: "#F5F7F6",
+          deep: "#EAF0ED",
         },
-        forest: {
-          DEFAULT: "#22362B",
-          light: "#2F4638",
-          dark: "#182620",
+        slate: {
+          DEFAULT: "#1E3336",
+          light: "#2C4A4E",
+          dark: "#132224",
         },
-        sage: {
-          DEFAULT: "#DCE3D4",
-          light: "#EBEFE4",
-          dark: "#B9C6AD",
+        haze: {
+          DEFAULT: "#DCE8E4",
+          light: "#EEF3F1",
+          dark: "#B7CBC5",
+        },
+        coral: {
+          DEFAULT: "#A64526",
+          light: "#D9603B",
+          dark: "#8A3820",
         },
         charcoal: {
-          DEFAULT: "#2B2A26",
-          soft: "#54524C",
+          DEFAULT: "#212927",
+          soft: "#4C5654",
         },
         gold: {
           DEFAULT: "#B08D57",
@@ -41,8 +46,8 @@ const config: Config = {
         lg: "10px",
       },
       boxShadow: {
-        subtle: "0 1px 2px rgba(34, 54, 43, 0.06)",
-        card: "0 2px 12px rgba(34, 54, 43, 0.08)",
+        subtle: "0 1px 2px rgba(30, 51, 54, 0.06)",
+        card: "0 2px 16px rgba(30, 51, 54, 0.1)",
       },
       transitionDuration: {
         DEFAULT: "180ms",
