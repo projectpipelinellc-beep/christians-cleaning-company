@@ -158,7 +158,7 @@ export function QuoteForm() {
 
   if (status.kind === "success") {
     return (
-      <div className="rounded-lg border border-haze-dark/60 bg-mist p-8 text-center sm:p-12">
+      <div className="flex h-full flex-col justify-center rounded-lg border border-haze-dark/60 bg-mist p-8 text-center sm:p-12">
         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-haze-light text-coral">
           <CheckIcon className="h-6 w-6" />
         </div>
@@ -183,7 +183,7 @@ export function QuoteForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-lg border border-haze-dark/60 bg-mist p-6 sm:p-10"
+      className="h-full rounded-lg border border-haze-dark/60 bg-mist p-6 sm:p-10"
     >
       {status.kind === "error" && (
         <div
@@ -379,7 +379,7 @@ export function QuoteForm() {
       <button
         type="submit"
         disabled={status.kind === "submitting"}
-        className="focus-ring mt-8 inline-flex w-full items-center justify-center rounded bg-coral px-7 py-3.5 text-base font-medium text-mist transition-colors hover:bg-coral-dark disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="focus-ring mt-8 inline-flex w-full items-center justify-center rounded bg-coral px-7 py-3.5 text-base font-medium text-mist transition-all duration-200 hover:-translate-y-0.5 hover:bg-coral-dark hover:shadow-[0_10px_24px_rgba(166,69,38,0.3)] active:translate-y-0 disabled:cursor-not-allowed disabled:translate-y-0 disabled:opacity-70 disabled:shadow-none sm:w-auto"
       >
         {status.kind === "submitting" ? "Sending…" : "Request My Free Quote"}
       </button>

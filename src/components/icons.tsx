@@ -8,6 +8,7 @@ import {
   Check,
   List,
   X,
+  ArrowRight,
 } from "@phosphor-icons/react/dist/ssr";
 
 type IconProps = { className?: string };
@@ -46,4 +47,8 @@ export function MenuIcon({ className = "h-6 w-6" }: IconProps) {
 
 export function CloseIcon({ className = "h-6 w-6" }: IconProps) {
   return <X weight="regular" className={className} aria-hidden="true" />;
+}
+
+export function ArrowRightIcon({ className = "h-4 w-4" }: IconProps) {
+  return <ArrowRight weight="bold" className={className} aria-hidden="true" />;
 }

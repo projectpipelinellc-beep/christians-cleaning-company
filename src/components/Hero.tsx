@@ -1,16 +1,17 @@
 import { business, googleRating } from "@/lib/site-config";
 import { HeroIllustration } from "./illustrations";
-import { PhoneIcon, StarIcon } from "./icons";
+import { ArrowRightIcon, PhoneIcon, StarIcon } from "./icons";
+import { Reveal } from "./Reveal";
 
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-mist">
       <div className="section-container grid items-center gap-14 py-16 sm:py-24 lg:grid-cols-[1.15fr,1fr] lg:gap-10 lg:py-32">
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-coral sm:text-sm">
             Home &amp; Commercial Cleaning &bull; Hudson Valley, NY
           </p>
-          <h1 className="mt-5 font-serif text-5xl leading-[1.05] text-slate sm:text-6xl lg:text-7xl">
+          <h1 className="mt-5 font-serif text-5xl leading-[1.05] tracking-tight text-slate sm:text-6xl lg:text-7xl">
             A clean home.
             <br />
             More time for you.
@@ -24,9 +25,10 @@ export function Hero() {
           <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
             <a
               href="#quote"
-              className="focus-ring inline-flex items-center justify-center rounded bg-coral px-7 py-3.5 text-base font-medium text-mist transition-colors hover:bg-coral-dark"
+              className="focus-ring group inline-flex items-center justify-center gap-2 rounded bg-coral px-7 py-3.5 text-base font-medium text-mist transition-all duration-200 hover:-translate-y-0.5 hover:bg-coral-dark hover:shadow-[0_10px_24px_rgba(166,69,38,0.3)] active:translate-y-0"
             >
               Get a Free Quote
+              <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
             <a
               href={business.phoneHref}
@@ -48,17 +50,22 @@ export function Hero() {
               from {googleRating.reviewCount} Google reviews
             </span>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
+        <Reveal
+          delay={150}
+          className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none"
+        >
           <div
             className="absolute -right-4 -top-6 hidden h-full w-full rounded-lg bg-haze lg:block"
             aria-hidden="true"
           />
-          <div className="relative aspect-[6/7] w-full overflow-hidden rounded-lg shadow-card lg:ml-8">
-            <HeroIllustration />
+          <div className="group relative aspect-[6/7] w-full overflow-hidden rounded-lg shadow-card lg:ml-8">
+            <div className="h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.03]">
+              <HeroIllustration />
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

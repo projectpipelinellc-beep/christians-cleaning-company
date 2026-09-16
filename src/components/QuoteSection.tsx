@@ -1,12 +1,13 @@
 import { business } from "@/lib/site-config";
 import { MailIcon, PhoneIcon } from "./icons";
 import { QuoteForm } from "./QuoteForm";
+import { Reveal } from "./Reveal";
 
 export function QuoteSection() {
   return (
     <section id="quote" className="scroll-mt-24 bg-mist-deep py-20 sm:py-28">
       <div className="section-container grid gap-8 lg:grid-cols-[1fr,1.3fr]">
-        <div className="rounded-lg bg-slate p-8 sm:p-10 lg:p-12">
+        <Reveal className="rounded-lg bg-slate p-8 sm:p-10 lg:p-12">
           <h2 className="font-serif text-3xl leading-tight text-mist sm:text-4xl">
             Let&rsquo;s take cleaning off your list.
           </h2>
@@ -30,9 +31,11 @@ export function QuoteSection() {
               {business.email}
             </a>
           </div>
-        </div>
+        </Reveal>
 
-        <QuoteForm />
+        <Reveal delay={100} className="h-full">
+          <QuoteForm />
+        </Reveal>
       </div>
     </section>
   );

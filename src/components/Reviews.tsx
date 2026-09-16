@@ -1,5 +1,6 @@
 import { googleRating, reviews } from "@/lib/site-config";
 import { StarIcon } from "./icons";
+import { Reveal } from "./Reveal";
 
 export function Reviews() {
   const [featured, ...rest] = reviews;
@@ -7,7 +8,7 @@ export function Reviews() {
   return (
     <section id="reviews" className="scroll-mt-24 bg-mist py-20 sm:py-28">
       <div className="section-container">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <Reveal className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <h2 className="font-serif text-3xl leading-tight text-slate sm:text-4xl">
               Kind words from local customers.
@@ -24,10 +25,13 @@ export function Reviews() {
               Google &middot; {googleRating.reviewCount} reviews
             </span>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="mt-12 grid gap-10 border-t border-haze-dark/60 pt-12 lg:grid-cols-[1.3fr,1fr] lg:gap-16">
-          <figure className="border-l-2 border-coral pl-6">
+        <Reveal
+          delay={100}
+          className="mt-12 grid gap-10 border-t border-haze-dark/60 pt-12 lg:grid-cols-[1.3fr,1fr] lg:gap-16"
+        >
+          <figure className="border-l-2 border-coral pl-6 transition-transform duration-300 hover:translate-x-1">
             <blockquote className="font-serif text-2xl leading-snug text-slate sm:text-3xl">
               &ldquo;{featured.quote}&rdquo;
             </blockquote>
@@ -48,7 +52,7 @@ export function Reviews() {
               </figure>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
