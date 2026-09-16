@@ -82,7 +82,7 @@ async function deliverEmail(payload: QuotePayload) {
       from,
       to,
       reply_to: payload.email,
-      subject: `New free quote request — ${payload.fullName}`,
+      subject: `New free quote request from ${payload.fullName}`,
       text,
     }),
   });

@@ -5,10 +5,7 @@ export function Approach() {
     <section id="approach" className="scroll-mt-24 bg-sage-light/60 py-16 sm:py-24">
       <div className="section-container">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-forest/80">
-            Our Approach
-          </p>
-          <h2 className="mt-3 font-serif text-3xl leading-tight text-charcoal sm:text-4xl">
+          <h2 className="font-serif text-3xl leading-tight text-charcoal sm:text-4xl">
             What you can expect from CCC.
           </h2>
         </div>

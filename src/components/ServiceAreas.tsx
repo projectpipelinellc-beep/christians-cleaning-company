@@ -6,10 +6,7 @@ export function ServiceAreas() {
     <section id="areas" className="scroll-mt-24 bg-sage-light/60 py-16 sm:py-24">
       <div className="section-container grid gap-10 lg:grid-cols-[1fr,1.1fr] lg:gap-16">
         <div className="max-w-lg">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-forest/80">
-            Service Areas
-          </p>
-          <h2 className="mt-3 font-serif text-3xl leading-tight text-charcoal sm:text-4xl">
+          <h2 className="font-serif text-3xl leading-tight text-charcoal sm:text-4xl">
             Serving homes across the Hudson Valley.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-charcoal-soft">
