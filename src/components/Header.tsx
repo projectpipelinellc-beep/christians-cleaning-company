@@ -65,7 +65,7 @@ export function Header() {
           </a>
         </div>
 
-        <div className="flex shrink-0 items-center gap-1.5 lg:hidden">
+        <div className="flex shrink-0 items-center gap-2 lg:hidden">
           <a
             href="#quote"
             className="focus-ring inline-flex items-center justify-center whitespace-nowrap rounded bg-forest px-3 py-2.5 text-sm font-medium text-ivory transition-colors hover:bg-forest-light sm:px-4"

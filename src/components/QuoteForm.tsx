@@ -26,6 +26,14 @@ const initialState: FormState = {
   companyWebsite: "",
 };
 
+const fieldLabels: Partial<Record<keyof FormState, string>> = {
+  fullName: "Full name",
+  email: "Email",
+  phone: "Phone",
+  location: "Town or ZIP code",
+  details: "What would you like cleaned?",
+};
+
 type SubmitStatus =
   | { kind: "idle" }
   | { kind: "submitting" }
@@ -48,24 +56,50 @@ export function QuoteForm() {
     setForm((f) => ({ ...f, [key]: value }));
   }
 
+  function validateField(key: keyof FormState, state: FormState): string | undefined {
+    switch (key) {
+      case "fullName":
+        return state.fullName.trim().length < 2
+          ? "Please enter your full name."
+          : undefined;
+      case "email":
+        return !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.email.trim())
+          ? "Please enter a valid email address."
+          : undefined;
+      case "location":
+        return state.location.trim().length < 2
+          ? "Please enter your town or ZIP code."
+          : undefined;
+      case "details":
+        return state.details.trim().length < 5
+          ? "Please tell us a bit about what you need cleaned."
+          : undefined;
+      case "phone":
+        return state.contactMethod === "phone" && state.phone.trim().length < 7
+          ? "Please add a phone number, or choose email instead."
+          : undefined;
+      default:
+        return undefined;
+    }
+  }
+
   function validateClient(): Partial<Record<keyof FormState, string>> {
     const next: Partial<Record<keyof FormState, string>> = {};
-    if (form.fullName.trim().length < 2) {
-      next.fullName = "Please enter your full name.";
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
-      next.email = "Please enter a valid email address.";
-    }
-    if (form.location.trim().length < 2) {
-      next.location = "Please enter your town or ZIP code.";
-    }
-    if (form.details.trim().length < 5) {
-      next.details = "Please tell us a bit about what you need cleaned.";
-    }
-    if (form.contactMethod === "phone" && form.phone.trim().length < 7) {
-      next.phone = "Please add a phone number, or choose email instead.";
-    }
+    (["fullName", "email", "location", "details", "phone"] as const).forEach((key) => {
+      const message = validateField(key, form);
+      if (message) next[key] = message;
+    });
     return next;
+  }
+
+  function handleBlur(key: keyof FormState) {
+    const message = validateField(key, form);
+    setErrors((prev) => {
+      const next = { ...prev };
+      if (message) next[key] = message;
+      else delete next[key];
+      return next;
+    });
   }
 
   async function handleSubmit(e: FormEvent) {
@@ -156,9 +190,22 @@ export function QuoteForm() {
           ref={errorSummaryRef}
           tabIndex={-1}
           role="alert"
+          aria-labelledby="quote-form-error-title"
           className="focus-ring mb-6 rounded border border-red-700/40 bg-red-50 px-4 py-3 text-sm text-red-900"
         >
-          {status.message}
+          <p id="quote-form-error-title">{status.message}</p>
+          {Object.keys(errors).length > 0 && (
+            <ul className="mt-2 list-disc space-y-1 pl-5">
+              {Object.entries(errors).map(([key, message]) => (
+                <li key={key}>
+                  <a href={`#${key}`} className="underline hover:no-underline">
+                    {fieldLabels[key as keyof FormState] ?? key}
+                  </a>
+                  : {message}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       )}
 
@@ -193,6 +240,7 @@ export function QuoteForm() {
             className={`mt-2 ${fieldClass(Boolean(errors.fullName))}`}
             value={form.fullName}
             onChange={(e) => update("fullName", e.target.value)}
+            onBlur={() => handleBlur("fullName")}
           />
           {errors.fullName && (
             <p id="fullName-error" className="mt-1.5 text-sm text-red-800">
@@ -216,6 +264,7 @@ export function QuoteForm() {
             className={`mt-2 ${fieldClass(Boolean(errors.email))}`}
             value={form.email}
             onChange={(e) => update("email", e.target.value)}
+            onBlur={() => handleBlur("email")}
           />
           {errors.email && (
             <p id="email-error" className="mt-1.5 text-sm text-red-800">
@@ -238,6 +287,7 @@ export function QuoteForm() {
             className={`mt-2 ${fieldClass(Boolean(errors.phone))}`}
             value={form.phone}
             onChange={(e) => update("phone", e.target.value)}
+            onBlur={() => handleBlur("phone")}
           />
           {errors.phone && (
             <p id="phone-error" className="mt-1.5 text-sm text-red-800">
@@ -261,6 +311,7 @@ export function QuoteForm() {
             className={`mt-2 ${fieldClass(Boolean(errors.location))}`}
             value={form.location}
             onChange={(e) => update("location", e.target.value)}
+            onBlur={() => handleBlur("location")}
           />
           {errors.location && (
             <p id="location-error" className="mt-1.5 text-sm text-red-800">
@@ -283,6 +334,7 @@ export function QuoteForm() {
             className={`mt-2 ${fieldClass(Boolean(errors.details))}`}
             value={form.details}
             onChange={(e) => update("details", e.target.value)}
+            onBlur={() => handleBlur("details")}
           />
           {errors.details && (
             <p id="details-error" className="mt-1.5 text-sm text-red-800">
